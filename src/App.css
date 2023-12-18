@@ -3,7 +3,7 @@
 }
 
 nav{
-  background-color: red;
+  background-color: yellow;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,5 +11,5 @@ nav{
   height: 30px;
 }
 .active{
-  background-color: brown;
+  background-color: gray;
 }
