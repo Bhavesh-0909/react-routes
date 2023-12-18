@@ -1,16 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Support from './components/Support';
+import NotFound from './components/NotFound';
+import MainHeader from './components/MainHeader';
+
 
 function App() {
   return (
     <div className="App">
-      <navbar>
-        <NavLink>Home</NavLink>
-        <NavLink>Contact us</NavLink>
-        <NavLink>Support</NavLink>
-        <NavLink>About</NavLink>
-      </navbar>
+      <nav>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/contact">Contact us</NavLink>
+        <NavLink to="/support">Support</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </nav>
+
+      <Routes>
+        <Route path='/' element={<MainHeader/>}>
+        <Route index element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/support" element={<Support/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Route>
+        
+      </Routes>
     </div>
   );
 }
